@@ -149,7 +149,7 @@ body {
 	background-color: #fffef8;
 }
 
-.header {
+.header_default {
 	display: grid;
 	justify-content: space-between;
 	margin: 50px 0
@@ -285,7 +285,7 @@ li:hover {
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"] {
+.envoyer {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -357,12 +357,209 @@ footer nav ul {
 	gap: 10px;
 }
 
-.edit_mod p {
+
+.edit_projets {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 10px;
-	width: 100%;
+	gap: 20px;
+	margin: 10em 0 5em 0;
 }
 
-.edit_projets {}
+.edit_projets a {
+	margin-bottom: 1.7em;
+	text-align: center;
+}
+
+/******** MODAL *******/
+
+.modal {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.--dark {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-wrapper {
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	width: 630px;
+	height: 670px;
+	overflow: auto;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+form {
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+
+	display: flex;
+	flex-direction: column;
+	width: 73%;
+	margin: auto;
+	gap: 10px;
+}
+
+form .Text_cate {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	border-bottom: 3px solid rgba(179, 179, 179, 0.5);
+	padding-bottom: 70px;
+
+}
+
+#photoTitle,
+#photoCategory {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.Img_projets {
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 20px;
+	border-bottom: 3px solid rgba(179, 179, 179, 0.5);
+	padding-bottom: 70px;
+}
+
+.Img_projets img {
+	width: 76.86px;
+	height: 102.57px;
+}
+
+.js-modal-close,
+.js-modal-close-all {
+	border: none;
+	background-color: white;
+	align-self: self-end;
+	font-size: 25px;
+}
+
+.js-modal-arrow {
+	position: fixed;
+	border: none;
+	background-color: white;
+	align-self: self-start;
+	font-size: 25px;
+}
+
+.js-modal-close:hover,
+.js-modal-arrow:hover,
+.js-modal-close-all:hover {
+	color: darkgray;
+}
+
+
+#titlemodal,
+#titlemodal2 {
+	padding-bottom: 50px;
+	font-family: Work Sans;
+	font-size: 26px;
+	text-align: center;
+
+}
+
+.addPhoto {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin: 2em auto;
+	width: 50%;
+	height: 36px;
+	text-align: center;
+	border-radius: 60px;
+}
+
+.valider {
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Syne';
+	font-weight: 700;
+	text-align: center;
+	color: white;
+	background: #A7A7A7;
+	border: none;
+	margin: 2em auto;
+	width: 50%;
+	height: 36px;
+	border-radius: 60px
+}
+
+.addPhoto:hover,
+.envoyer:hover {
+	background-color: #0E2F28;
+}
+
+.photoadd {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+
+	border-radius: 8px;
+	padding: 20px;
+	width: 90%;
+	;
+	height: 169px;
+	text-align: center;
+	background-color: #E8F1F6;
+	position: relative;
+}
+
+.photoadd label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+
+	background-color: #cbd6dc;
+	color: #306685;
+	border-radius: 50px;
+	padding: 13px 26px 13px 26px;
+
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.photoadd i {
+	font-size: 76px;
+	color: #b9c5cc;
+	margin-bottom: 10px;
+}
+
+.photoadd input[type="file"] {
+	display: none;
+}
+
+.photoadd p {
+	margin: 10px 0 0;
+	font-size: 0.8em;
+	color: #777;
+}

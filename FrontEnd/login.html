@@ -11,7 +11,7 @@
         rel="stylesheet">
     <meta name="description" content="">
     <link rel="stylesheet" href="./assets/login.css">
-    <!-- <script src="./assets/script.js" defer></script> -->
+    <script src="./assets/login.js" defer></script>
 
 </head>
 
@@ -22,7 +22,9 @@
         </a>
         <nav>
             <ul>
-                <li>projets</li>
+                <a href="./index.html">
+                    <li>projets</li>
+                </a>
                 <li>contact</li>
                 <li>login</li>
                 <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
@@ -30,24 +32,21 @@
         </nav>
     </header>
 
-
     <main>
-        <h2>Log In</h2>
+        <section class="espacelog" id="logadmin">
+            <h2 class="log">Log In</h2>
+            <form class="login" id="log">
+                <label for="Email">E-mail</label>
+                <input type="email" name="email" id="Email">
 
-        <form>
-            <label for="Email">Email</label>
-            <input type="text" id="Email" name="Email" />
+                <label for="pass">Mot de passe</label>
+                <input type="password" name="password" id="pass">
 
-
-            <label for="pass">Mot de passe</label>
-            <input type="password" id="pass" name="password" />
-
-
-            <input type="submit" value="Se connecter">
-            <a href="#">Mot de passe oublié</a>
-        </form>
-
-
+                <button class="connexion">Se connecter</button>
+            </form>
+            <p id="message"></p>
+            <p class="password"><a href="#" id="forgotPassword">Mot de passe oublié?</a></p>
+        </section>
     </main>
 
     <footer>

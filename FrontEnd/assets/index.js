@@ -1,4 +1,3 @@
-
 async function init() {
     let allinfo = await getallinfo();
 
@@ -52,6 +51,7 @@ function displayallworks(allinfo) {
 function displayallcate(allcate) {
     let containerbuttons = document.querySelector("#buttons")
 
+
     for (const cate of allcate) {
         containerbuttons.insertAdjacentHTML("beforeend",
             `
@@ -66,6 +66,7 @@ function displayallcate(allcate) {
 function filtercate() {
     let btnall = document.querySelector(".btnall");
     let containerbutton = document.querySelectorAll(".button");
+
 
     btnall.addEventListener("click", async () => {
         let allinfo = await getallinfo();
