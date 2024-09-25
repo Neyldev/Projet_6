@@ -23,7 +23,7 @@
 
 <body>
     <header class="header_admin">
-        <a class="edit_mod" href="#">
+        <a class="edit_mod js-modal" href="#modal1">
             <i class="fa-regular fa-pen-to-square"></i> Mode édition
         </a>
         <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
@@ -31,8 +31,8 @@
             <ul>
                 <li>projets</li>
                 <li>contact</li>
-                <a href="./login.html">
-                    <li>login</li>
+                <a class="logout">
+                    <li>logout</li>
                 </a>
                 <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
             </ul>
@@ -65,57 +65,57 @@
                     </li>
                 </ul>
 
-
                 <a href="#modal1" class="js-modal">
                     <i class="fa-regular fa-pen-to-square"></i> modifier
                 </a>
 
-                <aside id="modal1" class="modal --dark" aria-hidden="true" role="dialog" aria-labelledby="titlemodal"
-                    style="display: none;">
-
-                    <div class="modal-wrapper js-modal-stop">
-
-                        <button class="js-modal-close"><i class="fa-solid fa-xmark"></i></button>
-                        <h3 id="titlemodal">Galerie Photo</h3>
-
-                        <div class="Img_projets"> </div>
-
-                        <a href="#modal2" class="js-modal addPhoto">Ajouter une photo</a>
+                <!-- modale step1 -->
+                <div class="modalback"></div>
+                <aside class="modale">
+                    <button id="fermermodale"><i class="fa-solid fa-xmark"></i></button>
+                    <div class="step1">
+                        <h3>Galerie photo</h3>
+                        <div class="gallery-modale"></div>
+                        <div class="separator"></div>
+                        <div class="btnmodale">
+                            <button class="AddPhoto">Ajouter une photo</button>
+                        </div>
                     </div>
-                    <div class="modal-wrapper js-modal-stop">
-                        <button class="js-modal-arrow"><i class="fa-solid fa-arrow-left"></i></button>
-                        <button class="js-modal-close-all"><i class="fa-solid fa-xmark"></i></button>
-                        <h3 id="titlemodal2">Ajout photo</h3>
-
-                        <form id="Formulaire">
-                            <div class="photoadd">
-                                <i class="fa-regular fa-image"></i>
-                                <label for="plusAjouter">+ Ajouter Photo</label>
-                                <input type="file" id="plusAjouter" name="plusAjouter" accept="image/png, image/jpeg" />
-                                <p>jpg, png : 4mo max</p>
+                    <!-- fin modale step1 -->
+                    <!-- modale step2 -->
+                    <div class="step2">
+                        <button id="retourstep1"><i class="fa-solid fa-arrow-left"></i></button>
+                        <h3>Ajout photo</h3>
+                        <div id="modalestep2">
+                            <div class="uploadImage">
+                                <input type="file" accept="image/png, image/jpeg"
+                                    onchange="loadFile(event); btndisabled()" id="ImageSend" />
+                                <div id="output">
+                                    <i class="fa-regular fa-image"></i>
+                                    <button>
+                                        <i class="fa-solid fa-plus"></i> Ajouter une photo
+                                    </button>
+                                    <p>jpg, png : 4mo max</p>
+                                </div>
                             </div>
-                            <div class="Text_cate">
-                                <label for="photoTitle">Titre</label>
-                                <input type="text" id="photoTitle" name="photoTitle">
-
+                            <form class="add" action="#" method="post">
+                                <label for="titre">Titre</label>
+                                <input type="text" name="titre" id="titre" onchange="btndisabled()">
                                 <label for="photoCategory">Catégorie</label>
-                                <input type="text" id="photoCategory" name="photoCategory">
-                                <select>
-                                    <option value="objet">objet</option>
-                                    <option value="objet">objet</option>
-                                    <option value="objet">objet</option>
+                                <select id="photoCategory" class="categorieselect" name="categorie"
+                                    onchange="btndisabled()">
+                                    <option value=""></option>
                                 </select>
-                                <!-- <i class="js-chevron fa-solid fa-chevron-down"></i> -->
-                            </div>
-                            <input class="valider" type="submit" value="Valider">
-                        </form>
+
+                                <div class="separator"></div>
+                                <input type="submit" value="Valider" id="AddWork" disabled />
+                                <p id="errormodal"></p>
+                            </form>
+                        </div>
                     </div>
+                    <!-- fin modale step2 -->
                 </aside>
 
-                <aside id="modal2" class="modal" aria-hidden="true" role="dialog" aria-labelledby="titlemodal2"
-                    style="display: none;">
-
-                </aside>
 
             </div>
             <div class="gallery"></div>
@@ -127,10 +127,13 @@
             <form action="#" method="post">
                 <label for="name">Nom</label>
                 <input type="text" name="name" id="name">
+
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email">
+
                 <label for="message">Message</label>
                 <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
                 <input class="envoyer" type="submit" value="Envoyer">
             </form>
         </section>

@@ -1,6 +1,12 @@
+const token = window.localStorage.getItem("auth")
+if (token) {
+    window.location.href = "./index_admin.html";
+}
+
 function init() {
 
-    document.querySelector(".login").addEventListener("submit", async function (event) {
+    document.querySelector("#log").addEventListener("submit", async function (event) {
+
         event.preventDefault();
 
         let formdata = PrepareForm(event);
@@ -48,6 +54,7 @@ function fetchinfo(formdata) {
         body: JSON.stringify(formdata)
     })
         .then((response) => {
+
             if (response.status == 200) {
                 document.getElementById("message").textContent = "Connexion réussie!";
                 return response.json();
@@ -55,8 +62,8 @@ function fetchinfo(formdata) {
                 document.getElementById("message").textContent = "Identifiants invalides. Veuillez réessayer.";
             }
         })
-        .catch((error) => {
-            console.log(error);
+        .catch(() => {
+            document.getElementById("message").textContent = "Le server ne réponds pas";
         })
 
 }

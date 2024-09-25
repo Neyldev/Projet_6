@@ -173,6 +173,10 @@ header a {
 
 }
 
+.login {
+	font-weight: 600;
+}
+
 /****** Fin  Header ******/
 
 
@@ -206,15 +210,22 @@ input {
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"] {
+.connexion {
+	text-align: center;
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
+	border: none;
 	margin: 2em auto;
 	width: 180px;
-	text-align: center;
+	height: 36px;
 	border-radius: 60px;
+}
+
+#message,
+.password {
+	text-align: center;
 }
 
 form a {

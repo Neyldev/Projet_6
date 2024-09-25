@@ -77,6 +77,7 @@ function filtercate() {
         btn.addEventListener("click", async () => {
             let allinfo = await getallinfo();
             let filterallinfo = allinfo.filter(info => info.categoryId == btn.id)
+
             displayallworks(filterallinfo);
         })
     }
